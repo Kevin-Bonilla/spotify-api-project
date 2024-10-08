@@ -9,7 +9,7 @@ app.set("view engine", "pug");
 app.use(express.static("public"));
 
 const redirect_uri = "http://localhost:3000/callback";
-const client_id = "";
+const client_id = "93fd256ea2564724ac829a789fcdd24b";
 const client_secret = "";
 
 global.access_token;
@@ -19,6 +19,8 @@ app.get("/", function (req, res) {
 });
 
 app.get("/authorize", (req, res) => {
+  console.log("entered /authorize")
+
   var auth_query_parameters = new URLSearchParams({
     response_type: "code",
     client_id: client_id,
