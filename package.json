@@ -2,7 +2,7 @@
   "name": "spotify-node-app",
   "version": "0.0.1",
   "description": "Spotify example node app",
-  "main": "server.js",
+  "main": "server.js", 
   "scripts": {
     "start": "nodemon server.js"
   },
