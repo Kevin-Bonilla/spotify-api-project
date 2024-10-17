@@ -4,8 +4,9 @@ import fetch from "node-fetch";
 const app = express();
 
 import 'dotenv/config'
-console.log(process.env)
-console.log(process.env.CLIENT_ID);
+console.log(process.env); // debug
+console.log(process.env.CLIENT_ID); // debug
+console.log(process.env.CLIENT_SECRET); // debug
 
 app.set("views", "./views");
 app.set("view engine", "pug");
@@ -23,7 +24,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/authorize", (req, res) => {
-  console.log("entered /authorize")
+  console.log("entered /authorize"); // debug
 
   var auth_query_parameters = new URLSearchParams({
     response_type: "code",
@@ -38,7 +39,9 @@ app.get("/authorize", (req, res) => {
 });
 
 app.get("/callback", async (req, res) => {
+  console.log("entered /callback"); // debug
   const code = req.query.code;
+  console.log("callback code: " + code);
 
   var body = new URLSearchParams({
     code: code,
